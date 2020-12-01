@@ -3,7 +3,7 @@ import "./Login.css";
 
 function Login() {
   return (
-    <div>
+    <div className="content">
       <div className="container mt-5">
         <div className="row">
           <div className="col"></div>
