@@ -7,14 +7,10 @@ import "./Profile.css";
 function Profile() {
   return (
     <div>
-      {/* <div className="row"> */}
-      {/* <div className=""> */}
       <SideBar />
-      {/* </div> */}
       <div className="content">
         Dashboard Content <Login />
       </div>
-      {/* </div> */}
     </div>
   );
 }
