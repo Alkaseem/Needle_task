@@ -3,13 +3,13 @@ import "./Login.css";
 
 function Login() {
   return (
-    <div className="content">
+    <div className="login-card">
       <div className="container mt-5">
         <div className="row">
           <div className="col"></div>
           <div className="col-sm-7 col-md-6 col-lg-5">
-            <div className="card shadow border-0">
-              <div className="card-body">
+            <div className="card shadow border border-success rounded">
+              <div className="card-body login-boder">
                 <p className="lead text-center display-5 text-success">
                   Login to your account
                 </p>

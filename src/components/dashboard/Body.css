@@ -1,0 +1,108 @@
+.dashboard-body {
+  /* margin: 30px auto; */
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid blue; */
+  height: 83%;
+}
+
+/* BVN CARD */
+
+.dashboard-body .dashboard-card {
+  /* border: 2px solid red; */
+  width: 35%;
+  margin-left: 30px;
+}
+
+.dashboard-body .dashboard-card .BVN-card {
+  margin-top: 10px;
+  height: 28%;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.dashboard-body .dashboard-card .BVN-card .BVN-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-body .dashboard-card .BVN-card .title-text {
+  /* border: 2px solid red; */
+  font-size: 1rem;
+  color: #000000;
+}
+
+.dashboard-body .dashboard-card .BVN-card .BVN-text {
+  /* text-align: center; */
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.dashboard-body .dashboard-card .BVN-card .BVN-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-body .dashboard-card .BVN-card .BVN-footer .fa-fingerprint {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.dashboard-body .dashboard-card .BVN-card .fa-eye-slash {
+  color: #b4b4b4;
+}
+
+.dashboard-body .dashboard-card .fa-map-marker-alt {
+  color: #00a159;
+}
+
+/* TABLE */
+
+.dashboard-table {
+  /* border: 2px solid red; */
+  width: 59.4%;
+  /* margin-left: 10px; */
+  padding: 0 12px;
+  margin-top: 20px;
+}
+
+.dashboard-table .table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/* .dashboard-table .table-container {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+} */
+
+.dashboard-table .table-container thead {
+  background-color: #f0f2f7;
+  opacity: 29%;
+  border-radius: 14px;
+  color: #000000;
+  font-size: 0.8rem;
+}
+
+.dashboard-table .table-container tbody {
+  background-color: #f0f2f7;
+  border-radius: 100px;
+  color: #000000;
+  font-size: 0.9rem;
+  opacity: 100%;
+}
+
+.dashboard-table .table-container tr {
+  border: 5px solid #ffffff;
+  border-radius: 40px;
+}
+
+.dashboard-table .table-container .far {
+  background-color: #00a159;
+  color: #00a159;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  margin-right: 5px;
+}

@@ -1,7 +1,7 @@
 const sideData = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: "fas fa-th-large",
     cName: "nav-text",
     cNameb: "dash",

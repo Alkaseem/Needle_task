@@ -4,6 +4,7 @@ import "./App.css";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import SideBar from "./components/sidebar/SideBar";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const history = createBrowserHistory();
@@ -12,9 +13,11 @@ function App() {
     <>
       {/* <Router history={history}> */}
       <SideBar />
+      {/* <Login /> */}
       <Switch>
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/setting" component={Login} />
+        <Route exact path="/login" component={Login} />
       </Switch>
       {/* </Router> */}
     </>

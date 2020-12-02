@@ -74,6 +74,11 @@ span {
   color: #00a159;
 }
 
+.dash:focus {
+  background-color: white;
+  color: #00a159;
+}
+
 .dash {
   background-color: #000000;
 }
