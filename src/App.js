@@ -8,13 +8,14 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const history = createBrowserHistory();
-
+  console.log(history);
   return (
     <>
       {/* <Router history={history}> */}
-      <SideBar />
+      {/* <SideBar /> */}
       {/* <Login /> */}
       <Switch>
+        <Route exact path="/" component={Login} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/login" component={Login} />
