@@ -8,7 +8,7 @@ const sideData = [
   },
   {
     title: "Complete Reg",
-    path: "/dashboard",
+    path: "/completeReg",
     icon: "fas fa-user",
     cName: "nav-text",
     cNameb: "bag",
@@ -36,7 +36,7 @@ const sideData = [
   },
   {
     title: "Profile",
-    path: "/profile",
+    path: "/dashboard",
     icon: "fas fa-user",
     cName: "nav-text",
     cNameb: "bag",

@@ -8,7 +8,6 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
   const history = createBrowserHistory();
-  console.log(history);
   return (
     <>
       {/* <Router history={history}> */}

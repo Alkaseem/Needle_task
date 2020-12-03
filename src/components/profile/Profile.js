@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import SideBar from "../sidebar/SideBar";
+import Form from "./Form";
 
 import "./Profile.css";
 
@@ -9,7 +10,7 @@ function Profile() {
     <div className="content">
       <SideBar />
       <Navbar />
-      <h2>Personal information</h2>
+      <Form />
     </div>
   );
 }
