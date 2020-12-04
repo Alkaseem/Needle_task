@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import sideData from "./SideData";
 import "./SideBar.css";
 
 function Side() {
-  const [sidebar, setSidebar] = useState(false);
+  // const [sidebar, setSidebar] = useState(false);
 
   // const showSidebar = () => setSidebar(!sidebar);
   return (
