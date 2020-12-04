@@ -1,4 +1,5 @@
 .Header {
+  /* display: flex; */
   margin: 30px auto;
   width: 88%;
 }
@@ -26,6 +27,13 @@
 
 .Header .Header-card .nab-text {
   color: #adadad;
+  text-decoration: none;
+  padding: 25px 0;
+}
+
+.Header .Header-card .nab-text:focus {
+  color: #00a159;
+  border-bottom: 2px solid #00a159;
 }
 
 .Header .Header-card .Back {
@@ -34,4 +42,8 @@
 
 .Header .Header-card .Back i {
   padding-right: 5px;
+}
+
+.Header .profile-icon {
+  border: 3px solid green;
 }

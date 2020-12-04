@@ -28,12 +28,6 @@ function ProgressBar() {
           <i class="far fa-user-circle"></i>
         </div>
       </ul>
-      {/* <div className="body Progressbar">
-        <div>
-          Hi, Adeniran Opeyemi. <i class="fas fa-map-marker-alt"></i>
-          <span className="text-muted">Lagos, Nigeria</span>
-        </div>
-      </div> */}
     </div>
   );
 }

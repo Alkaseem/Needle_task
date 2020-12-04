@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import navData from "./NavData";
 
@@ -16,9 +16,13 @@ function Navbar() {
           {navData.map((item, idx) => {
             return (
               <li key={idx}>
-                <Link className={item.cName} to={item.path}>
+                <NavLink
+                  activeClassName="Active"
+                  className={item.cName}
+                  to={item.path}
+                >
                   {item.title}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
@@ -27,6 +31,10 @@ function Navbar() {
           Complete
         </button>
       </header>
+      {/* <div className="profile-icon">
+        <i class="far fa-bell"></i>
+        <i class="far fa-user-circle"></i>
+      </div> */}
     </div>
   );
 }
