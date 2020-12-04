@@ -30,7 +30,9 @@ function Body() {
       <div className="dashboard-table">
         <div className="table-header">
           <div>Recent Activities</div>
-          <Link className="text-success">View all</Link>
+          <Link to="/dashboard" className="text-success">
+            View all
+          </Link>
         </div>
         <div className="table-container">
           <table class="table table-borderless">
