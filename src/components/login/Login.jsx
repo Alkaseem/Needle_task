@@ -1,7 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { login } from "../../store/actions/AuthAction";
+import { setAlert } from "../../store/actions/AlertAction";
+
 import "./Login.css";
 
-function Login() {
+function Login({ login, isAuthenticated, alert }) {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = formData;
+
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    login(email, password);
+  };
+
+  let alertmessage = null;
+
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />;
+  } else {
+    if (alert.length !== 0) {
+      alertmessage = (
+        <div className="alert alert-danger" role="alert">
+          {alert[0].msg}
+        </div>
+      );
+    }
+  }
   return (
     <div className="login-card">
       <div className="container mt-5">
@@ -13,8 +47,13 @@ function Login() {
                 <p className="lead text-center display-5 text-success">
                   Login to your account
                 </p>
+                {alertmessage}
                 <hr />
-                <form className="needs-validation mt-3" noValidate>
+                <form
+                  className="needs-validation mt-3"
+                  onSubmit={onSubmit}
+                  noValidate
+                >
                   <div className="form-group">
                     <label htmlFor="">Email*</label>
                     <input
@@ -24,6 +63,8 @@ function Login() {
                       id="exampleInputUsername"
                       placeholder="Email"
                       required
+                      value={email}
+                      onChange={onChange}
                     />
                     <div className="invalid-feedback">
                       Please enter your email.
@@ -38,6 +79,8 @@ function Login() {
                       id="exampleInputPassword1"
                       placeholder="Password"
                       required
+                      value={password}
+                      onChange={onChange}
                     />
                     <div className="invalid-feedback">
                       Please enter your password.
@@ -68,4 +111,9 @@ function Login() {
   );
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.authReducer.isAuthenticated,
+  alert: state.alertReducer,
+});
+
+export default connect(mapStateToProps, { login, setAlert })(Login);
