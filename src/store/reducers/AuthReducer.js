@@ -2,7 +2,7 @@ import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, ACTIVE_USER } from "../actionTypes";
 
 const initialState = {
   token: localStorage.getItem("jwtToken"),
-  // jwtToken: null,
+  jwtToken: null,
   user: {},
   isAuthenticated: false,
 };
@@ -11,7 +11,7 @@ const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case ACTIVE_USER:
-      console.log("ACTIVE:", payload.data);
+      console.log("ACTIVE:", payload);
       return {
         ...state,
         // isAuthenticated: !!Object.keys(payload.data).length,
@@ -24,7 +24,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         ...payload,
         isAuthenticated: true,
-        // JWTToken: payload.data.token,
+        JWTToken: payload.data.token,
       };
     case LOGIN_FAIL:
     case LOGOUT:

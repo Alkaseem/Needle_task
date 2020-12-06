@@ -19,7 +19,7 @@ let currentState = store.getState();
 
 store.subscribe(() => {
   currentState = store.getState();
-  const token = currentState.authReducer.token;
+  const token = currentState.authReducer.JWTToken;
   if (token) {
     configToken(token);
   }

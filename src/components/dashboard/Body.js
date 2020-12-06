@@ -6,8 +6,7 @@ function Body({ user }) {
   return (
     <div className="dashboard-body">
       <div className="dashboard-card">
-        {/* Hi, {user.data.firstName} {user.data.lastName}.{" "} */}
-        Hi, Alkaseem Khalifa
+        Hi, {user.firstName} {user.lastName}. {/* Hi, Alkaseem Khalifa */}
         <i className="fas fa-map-marker-alt"></i>
         <span className="text-muted">Lagos, Nigeria</span>
         <div className="BVN-card">

@@ -6,12 +6,8 @@ import Body from "../dashboard/Body";
 import SideBar from "../sidebar/SideBar";
 
 function Dashboard({ isAuth, user }) {
-  // console.log(user);
-  // console.log(isAuth);
-  if (isAuth && user !== null) {
-    console.log(user);
-    console.log(isAuth);
-  }
+  console.log(user);
+  console.log(isAuth);
   return (
     <div className="content">
       <SideBar />
@@ -22,7 +18,7 @@ function Dashboard({ isAuth, user }) {
 }
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.authReducer.isAuthenticated,
+  isAuth: state.authReducer.isAuthenticated,
   user: state.authReducer.user,
 });
 
