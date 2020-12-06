@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import sideData from "./SideData";
+import { logout } from "../../store/actions/AuthAction";
+
 import "./SideBar.css";
 
-function Side() {
-  // const [sidebar, setSidebar] = useState(false);
-
-  // const showSidebar = () => setSidebar(!sidebar);
+function Side({ logout }) {
   return (
     <>
       <div className="Nabvar">
@@ -25,10 +25,10 @@ function Side() {
               );
             })}
             <li className="nav-text logout">
-              <Link to="/" className="log">
+              <a className="log" href="/" onClick={logout}>
                 <i className="fas fa-sign-out-alt" />
                 <span>Logout</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
@@ -37,4 +37,9 @@ function Side() {
   );
 }
 
-export default Side;
+const mapStateToProps = (state) => ({
+  user: state.authReducer.user,
+  isAuth: state.authReducer.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { logout })(Side);

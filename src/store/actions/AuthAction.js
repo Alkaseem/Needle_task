@@ -1,17 +1,15 @@
 import { LOGOUT, LOGIN_SUCCESS, LOGIN_FAIL, ACTIVE_USER } from "../actionTypes";
 import { setAlert } from "./AlertAction";
-
+import { configToken } from "../../utils/api";
 import api from "../../utils/api";
 
-export const activeUser = () => async (dispatch) => {
+export const activeUser = (data) => async (dispatch) => {
   try {
-    const res = await api.get("/auth");
     dispatch({
       type: ACTIVE_USER,
-      payload: res.data,
+      payload: data,
     });
   } catch (error) {
-    console.log(error.response.data);
     if (error) {
       dispatch({
         type: LOGIN_FAIL,
@@ -19,6 +17,10 @@ export const activeUser = () => async (dispatch) => {
     }
   }
 };
+
+export function setAuthorizationToken(token) {
+  configToken(token);
+}
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -28,9 +30,12 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
-    dispatch(activeUser());
+    const user = res.data;
+    // console.log("TOKEN", user.data.token);
+    // console.log("TOKEN2", res);
+    setAuthorizationToken(user.data.token);
+    dispatch(activeUser(user));
   } catch (err) {
-    console.log(err.response.data);
     if (err.response !== undefined) {
       const error = err.response.data;
       dispatch(setAlert(error.message, "danger"));

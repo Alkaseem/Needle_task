@@ -24,8 +24,8 @@ function ProgressBar() {
           <i className="fas fa-chevron-circle-right"></i>
         </li>
         <div className="profile-icons">
-          <i class="far fa-bell"></i>
-          <i class="far fa-user-circle"></i>
+          <i className="far fa-bell"></i>
+          <i className="far fa-user-circle"></i>
         </div>
       </ul>
     </div>

@@ -31,7 +31,7 @@ function Login({ login, isAuthenticated, alert }) {
     if (alert.length !== 0) {
       alertmessage = (
         <div className="alert alert-danger" role="alert">
-          {alert[0].msg}
+          {alert[0].msg || "Fields should not be empty"}
         </div>
       );
     }

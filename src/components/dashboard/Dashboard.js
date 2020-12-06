@@ -1,16 +1,29 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import ProgressBar from "../dashboard/ProgressBar";
 import Body from "../dashboard/Body";
 import SideBar from "../sidebar/SideBar";
 
-function Dashboard() {
+function Dashboard({ isAuth, user }) {
+  // console.log(user);
+  // console.log(isAuth);
+  if (isAuth && user !== null) {
+    console.log(user);
+    console.log(isAuth);
+  }
   return (
     <div className="content">
       <SideBar />
       <ProgressBar />
-      <Body />
+      <Body user={user} />
     </div>
   );
 }
 
-export default Dashboard;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.authReducer.isAuthenticated,
+  user: state.authReducer.user,
+});
+
+export default connect(mapStateToProps)(Dashboard);

@@ -2,28 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Body.css";
 
-function Body() {
+function Body({ user }) {
   return (
     <div className="dashboard-body">
       <div className="dashboard-card">
-        Hi, Adeniran Opeyemi. <i class="fas fa-map-marker-alt"></i>
+        {/* Hi, {user.data.firstName} {user.data.lastName}.{" "} */}
+        Hi, Alkaseem Khalifa
+        <i className="fas fa-map-marker-alt"></i>
         <span className="text-muted">Lagos, Nigeria</span>
         <div className="BVN-card">
           <div className="BVN-title">
             <div className="title-text">BVN Number</div>
-            <i class="far fa-eye-slash"></i>
+            <i className="far fa-eye-slash"></i>
           </div>
           <div className="BVN-text">28384719424</div>
           <div className="BVN-footer">
             <div>
-              <i class="fas fa-fingerprint"></i> <span>Verified</span>
+              <i classn="fas fa-fingerprint"></i> <span>Verified</span>
             </div>
-            <button type="button" class="btn btn-outline-success">
+            <button type="button" className="btn btn-outline-success">
               EDIT
             </button>
           </div>
         </div>
-        <button type="button" class="btn btn-success btn-lg btn-block mt-3">
+        <button type="button" className="btn btn-success btn-lg btn-block mt-3">
           Upload Invoice
         </button>
       </div>
@@ -35,7 +37,7 @@ function Body() {
           </Link>
         </div>
         <div className="table-container">
-          <table class="table table-borderless">
+          <table className="table table-borderless">
             <thead>
               <tr>
                 <th>Date</th>
@@ -54,7 +56,7 @@ function Body() {
                 </td>
                 <td>2 hrs ago</td>
                 <td>
-                  <i class="fas fa-angle-right"></i>
+                  <i className="fas fa-angle-right"></i>
                 </td>
               </tr>
               <tr>
@@ -65,7 +67,7 @@ function Body() {
                 </td>
                 <td>7 hrs ago</td>
                 <td>
-                  <i class="fas fa-angle-right"></i>
+                  <i className="fas fa-angle-right"></i>
                 </td>
               </tr>
               <tr>
@@ -76,7 +78,7 @@ function Body() {
                 </td>
                 <td>13 days ago</td>
                 <td>
-                  <i class="fas fa-angle-right"></i>
+                  <i className="fas fa-angle-right"></i>
                 </td>
               </tr>
             </tbody>
