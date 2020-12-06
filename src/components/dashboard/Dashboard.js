@@ -6,12 +6,10 @@ import Body from "../dashboard/Body";
 import SideBar from "../sidebar/SideBar";
 
 function Dashboard({ isAuth, user }) {
-  console.log(user);
-  console.log(isAuth);
   return (
     <div className="content">
       <SideBar />
-      <ProgressBar />
+      <ProgressBar user={user} />
       <Body user={user} />
     </div>
   );

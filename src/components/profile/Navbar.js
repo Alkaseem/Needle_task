@@ -10,7 +10,7 @@ function Navbar() {
     <div className="Header">
       <header className="Header-card">
         <Link to="/completeReg" className="Back">
-          <i class="fas fa-long-arrow-alt-left"></i>Back
+          <i className="fas fa-long-arrow-alt-left"></i>Back
         </Link>
         <ul>
           {navData.map((item, idx) => {
@@ -27,7 +27,7 @@ function Navbar() {
             );
           })}
         </ul>
-        <button type="button" class="btn btn-success">
+        <button type="button" className="btn btn-success">
           Complete
         </button>
       </header>

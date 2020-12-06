@@ -1,7 +1,8 @@
 import React from "react";
 import "./ProgressBar.css";
 
-function ProgressBar() {
+function ProgressBar({ user }) {
+  const { profilePic } = user;
   return (
     <div className="Progressbar">
       <ul>
@@ -25,7 +26,8 @@ function ProgressBar() {
         </li>
         <div className="profile-icons">
           <i className="far fa-bell"></i>
-          <i className="far fa-user-circle"></i>
+          {/* <i className="far fa-user-circle"></i> */}
+          <img src={profilePic} alt="profile pic" />
         </div>
       </ul>
     </div>

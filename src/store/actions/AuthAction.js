@@ -9,7 +9,6 @@ export const activeUser = () => async (dispatch) => {
       type: ACTIVE_USER,
       payload: res.data,
     });
-    console.log(res.data);
   } catch (error) {
     console.log(error.response.data);
     if (error) {

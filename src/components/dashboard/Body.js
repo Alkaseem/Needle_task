@@ -14,7 +14,8 @@ function Body({ user }) {
             <div className="title-text">BVN Number</div>
             <i className="far fa-eye-slash"></i>
           </div>
-          <div className="BVN-text">28384719424</div>
+          {/* <div className="BVN-text">28384719424</div> */}
+          <div className="BVN-text">{user.bvn} </div>
           <div className="BVN-footer">
             <div>
               <i classn="fas fa-fingerprint"></i> <span>Verified</span>

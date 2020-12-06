@@ -25,7 +25,7 @@ function Side({ logout }) {
               );
             })}
             <li className="nav-text logout">
-              <a className="log" href="/" onClick={logout}>
+              <a href="/" onClick={logout} className="log">
                 <i className="fas fa-sign-out-alt" />
                 <span>Logout</span>
               </a>

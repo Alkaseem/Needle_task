@@ -11,10 +11,8 @@ const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case ACTIVE_USER:
-      console.log("ACTIVE:", payload);
       return {
         ...state,
-        // isAuthenticated: !!Object.keys(payload.data).length,
         isAuthenticated: true,
         user: payload.data,
       };
@@ -29,7 +27,12 @@ const authReducer = (state = initialState, action) => {
     case LOGIN_FAIL:
     case LOGOUT:
       localStorage.removeItem("jwtToken");
-      return { ...state, token: null, isAuthenticated: false, user: null };
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        user: null,
+      };
     default:
       return state;
   }

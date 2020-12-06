@@ -1,7 +1,17 @@
 import React from "react";
 import "./Form.css";
 
-function Form() {
+function Form({ user }) {
+  const {
+    firstName,
+    lastName,
+    middleName,
+    date_Of_Birth,
+    gender,
+    address,
+    marital_Status,
+    phoneNumber,
+  } = user;
   return (
     <div className="Personal-card">
       <div className="Form-title">
@@ -11,14 +21,14 @@ function Form() {
       <div className="Form-inputs">
         <div className="text-title">Upload your profile picture</div>
         <form>
-          <div class="form-row">
-            <div class="form-group col-md-3">
-              <label for="inputPassword2" class="sr-only">
+          <div className="form-row">
+            <div className="form-group col-md-3">
+              <label htmlFor="inputPassword2" className="sr-only">
                 Image
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputPassword2"
                 placeholder="Click to add image"
               />
@@ -30,151 +40,135 @@ function Form() {
                 id="file"
                 accept="image/*"
               />
-              <label id="Lable" for="file">
-                <i class="far fa-image"></i>
+              <label id="Lable" htmlFor="file">
+                <i className="far fa-image"></i>
                 Add image
               </label>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputCity">First Name</label>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <label htmlFor="inputCity">First Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputCity"
                 placeholder="Khalifa"
+                value={firstName}
+                readOnly="readonly"
               />
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputCity">Last Name</label>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputCity">Last Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputCity"
                 placeholder="Ofenyi"
+                value={lastName}
+                readOnly="readonly"
               />
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputZip">Other Name</label>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputZip">Other Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputZip"
                 placeholder="Alkaseem"
+                value={middleName}
+                readOnly="readonly"
               />
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputState">Gender</label>
-              <select id="inputState" class="form-control">
-                <option selected>Male</option>
-                <option>Male</option>
-                <option>Female</option>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">Gender</label>
+              <select disabled id="inputState" className="form-control">
+                <option value="" selected>
+                  {gender}
+                </option>
+                {/* <option>Male</option>
+                <option>Female</option> */}
               </select>
             </div>
-            <div class="form-group col-md-8">
-              <label for="inputCity">Address</label>
+            <div className="form-group col-md-8">
+              <label htmlFor="inputCity">Address</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputCity"
                 placeholder="18 Hughes road, Idiroko Estate, Lagos"
+                value={address}
+                readOnly="readonly"
               />
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputState">State</label>
-              <select id="inputState" class="form-control">
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">State</label>
+              <select id="inputState" className="form-control">
                 <option selected>Lagos</option>
                 <option>Lagos</option>
                 <option>Abuja</option>
                 <option>Kano</option>
               </select>
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">LGA</label>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">LGA</label>
               <select id="inputState" class="form-control">
                 <option selected>Surelere</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Marital Status</label>
-              <select id="inputState" class="form-control">
-                <option selected>Single</option>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">Marital Status</label>
+              <select id="inputState" className="form-control">
+                <option selected>{marital_Status}</option>
                 <option>Single</option>
                 <option>Married</option>
               </select>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputCity">Date of Birth</label>
+          <div className="form-row">
+            <div className="form-group col-md-4">
+              <label htmlFor="inputCity">Date of Birth</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputCity"
                 placeholder="02/12/1995"
+                value={date_Of_Birth}
+                readOnly="readonly"
               />
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputCity">Phone</label>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputCity">Phone</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputCity"
                 placeholder="+234 8117283293"
+                value={phoneNumber}
+                readOnly="readonly"
               />
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputZip">Type of disablity</label>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputZip">Type of disablity</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="inputZip"
                 placeholder="Nil"
               />
             </div>
           </div>
-          <button type="submit" class="btn btn-success">
+          <button type="submit" className="btn btn-success">
             Save & Continue
           </button>
-          <span id="Cancel" onClick="">
-            Cancel
-          </span>
+          <span id="Cancel">Cancel</span>
         </form>
-        {/* <form class="form-inline">
-          <div class="form-group mx-sm-3 mb-2">
-            <label for="inputPassword2" class="sr-only">
-              Passwordssss
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputPassword2"
-              placeholder="Click to add image"
-            />
-          </div>
-          <button type="submit" class="btn btn-success mb-2">
-            Add Image
-          </button>
-          <div class="row">
-            <div class="col-7">
-              <input type="text" class="form-control" placeholder="City" />
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="State" />
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Zip" />
-            </div>
-          </div>
-          <i class="far fa-image"></i>
-        </form> */}
       </div>
     </div>
   );
