@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import sideData from "./SideData";
+import logo from "./logo.png";
 import { logout } from "../../store/actions/AuthAction";
 
 import "./SideBar.css";
@@ -13,7 +14,7 @@ function Side({ logout }) {
       <div className="Nabvar">
         <nav className="nav-menu active">
           <ul className="nav-menu-items">
-            <img src="/logo.png" alt="logo" />
+            <img src={logo} alt="logo" />
             {sideData.map((item, idx) => {
               return (
                 <li key={idx} className={item.cName}>

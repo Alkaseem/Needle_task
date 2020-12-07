@@ -10,7 +10,6 @@ export const activeUser = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (error) {
-    console.log(error.response.data);
     if (error) {
       dispatch({
         type: LOGIN_FAIL,
