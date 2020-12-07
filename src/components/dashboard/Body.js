@@ -18,7 +18,7 @@ function Body({ user }) {
           <div className="BVN-text">{user.bvn} </div>
           <div className="BVN-footer">
             <div>
-              <i classn="fas fa-fingerprint"></i> <span>Verified</span>
+              <i className="fas fa-fingerprint"></i> <span>Verified</span>
             </div>
             <button type="button" className="btn btn-outline-success">
               EDIT
