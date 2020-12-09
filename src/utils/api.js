@@ -11,19 +11,9 @@ const api = axios.create({
   },
 });
 
-// export const configToken = (token) => {
-//   if (token) {
-//     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-//   } else {
-//     delete api.defaults.headers.common["Authorization"];
-//   }
-// };
-
 api.interceptors.request.use((req) => {
   // `req` is the Axios request config, so you can modify
   // the `headers`.
-  // console.log(`${req.method} ${req.url}`);
-  // console.log(req);
   if (localStorage.jwtToken) {
     req.headers.authorization = `Bearer ${localStorage.jwtToken}`;
   }

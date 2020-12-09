@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 
 import store from "../store";
-import { configToken } from "../utils/api";
 import { activeUser } from "../store/actions/AuthAction";
 import Main from "./Main";
 
@@ -12,7 +11,6 @@ function App() {
   useEffect(() => {
     // check for token in LS
     if (localStorage.jwtToken) {
-      //   configToken(localStorage.jwtToken);
       store.dispatch(activeUser());
     }
     // log user out from all tabs if they log out in one tab
