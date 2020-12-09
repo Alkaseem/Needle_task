@@ -8,7 +8,7 @@ function Body({ user }) {
       <div className="dashboard-card">
         Hi, {user.firstName} {user.lastName}. {/* Hi, Alkaseem Khalifa */}
         <i className="fas fa-map-marker-alt"></i>
-        <span className="text-muted">Lagos, Nigeria</span>
+        <span className="text-muted">Logos, Nigeria</span>
         <div className="BVN-card">
           <div className="BVN-title">
             <div className="title-text">BVN Number</div>
@@ -18,7 +18,8 @@ function Body({ user }) {
           <div className="BVN-text">{user.bvn} </div>
           <div className="BVN-footer">
             <div>
-              <i className="fas fa-fingerprint"></i> <span>Verified</span>
+              <i className="fas fa-fingerprint"></i>{" "}
+              <span>{user.bvnVerified ? "Verified" : null}</span>
             </div>
             <button type="button" className="btn btn-outline-success">
               EDIT
